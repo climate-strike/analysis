@@ -1,7 +1,10 @@
 import json
+import time
 import requests
 import lxml.html
 from tqdm import tqdm
+from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
 
 
 def get_repo(url):
@@ -31,15 +34,25 @@ repos = []
 new_topics = set()
 topics = open('topics.txt').read().splitlines()
 
+driver = webdriver.Firefox()
+
 seen = set()
 bar = tqdm(topics)
 for topic in bar:
     bar.set_description(topic)
-    resp = requests.get('https://github.com/topics/{}'.format(topic))
-    html = lxml.html.fromstring(resp.content)
 
-    if b'ajax-pagination-btn' in resp.content:
-        print('LOAD MORE FOR', topic)
+    topic_url = 'https://github.com/topics/{}'.format(topic)
+    driver.get(topic_url)
+    time.sleep(2)
+
+    try:
+        while True:
+            driver.find_element_by_css_selector('.ajax-pagination-btn').click()
+            time.sleep(5)
+    except NoSuchElementException:
+        pass
+
+    html = lxml.html.fromstring(driver.page_source)
 
     for repo in html.cssselect('article'):
         url = repo.cssselect('h1 a:last-child')[0].attrib['href']
