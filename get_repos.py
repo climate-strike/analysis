@@ -99,8 +99,8 @@ for term in bar:
 
 print(len(repos), 'repos')
 
-with open('repos.json', 'w') as f:
+with open('data/repos.json', 'w') as f:
     json.dump(repos, f)
 
-with open('new_topics.txt', 'w') as f:
+with open('data/new_topics.txt', 'w') as f:
     f.write('\n'.join(list(new_topics)))

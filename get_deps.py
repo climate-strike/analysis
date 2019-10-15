@@ -24,7 +24,7 @@ def get_deps(repo):
     deps = [a.attrib['href'] for a in html.cssselect('#dependencies .js-dependency [data-octo-click=dep_graph_package]')]
     return deps
 
-with open('repos.json', 'r') as f:
+with open('data/repos.json', 'r') as f:
     repos = json.load(f)
 
 for i, repo in tqdm(enumerate(repos)):
@@ -33,10 +33,10 @@ for i, repo in tqdm(enumerate(repos)):
     deps = get_deps(url)
     repo['dependencies'] = deps
     if i % 10 == 0:
-        with open('repos.json', 'w') as f:
+        with open('data/repos.json', 'w') as f:
             json.dump(repos, f)
 
-with open('repos.json', 'w') as f:
+with open('data/repos.json', 'w') as f:
     json.dump(repos, f)
 
 driver.close()
