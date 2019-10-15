@@ -14,7 +14,7 @@ For each of the collected repos we then use [GitHub's dependency graph feature](
 
 3. `results.py`
 
-Out of the 651 repos we crawled, 147 had dependencies that GitHub could parse. The full results are presented in [`results.html`](results.html).
+Out of the 651 repos we crawled, 147 had dependencies that GitHub could parse. The full results are presented in [`results/index.html`](results/index.html).
 
 The top five dependencies are:
 
@@ -25,3 +25,7 @@ The top five dependencies are:
 - /pytest-dev/pytest (36)
 
 Some of these dependencies have overlap, e.g. `scipy` and `pandas` both also have `numpy` as a dependency.
+
+The overall distribution is long-tail, indicating that, aside from a few dominant repos, most dependencies are scarce, so a wide adoption of the license will provide the most coverage:
+
+![](results/dist.png)
