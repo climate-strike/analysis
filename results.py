@@ -58,6 +58,8 @@ html.append('<ul style="columns:20em;">{}</ul>'.format(
 
 plt.title('Repo dependency distribution')
 plt.hist(dep_counts.values(), bins=100)
+plt.ylabel('n')
+plt.xlabel('Number of repos')
 plt.savefig('results/dist.png')
 # plt.show()
 
