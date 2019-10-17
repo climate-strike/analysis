@@ -32,3 +32,12 @@ geotechnical-engineering
 geopressure
 permeability
 geostatistics
+pore pressure
+witsml
+prodml
+resqml
+full-waveform-inversion
+seismic-inversion
+seismic-attributes
+seismic-tomography
+wellbore

@@ -1,3 +1,24 @@
 facies
 segy
 seismic interpretation
+reservoir characterization
+pressure transient analysis
+reservoir simulation
+reservoir simulator
+oil recovery
+oil saturation
+wireline log
+well log
+witsml
+prodml
+porosity
+seismic imaging
+seismic attributes
+full waveform inversion
+seismic propagation
+seismic inversion
+welllog
+seismic wave propagation
+wellbore
+history matching
+drilling data

@@ -76,7 +76,7 @@ for term in bar:
     bar.set_description(term)
     page = 1
     while True:
-        resp = requests.get('https://github.com/search', params={'q': term, 'p': page})
+        resp = requests.get('https://github.com/search', params={'q': '"{}"'.format(term), 'p': page})
 
         html = lxml.html.fromstring(resp.content)
         results = html.cssselect('.repo-list-item')

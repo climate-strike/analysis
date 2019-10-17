@@ -14,15 +14,15 @@ For each of the collected repos we then use [GitHub's dependency graph feature](
 
 3. `results.py`
 
-Out of the 651 repos we crawled, 147 had dependencies that GitHub could parse. The full results are presented in [`results/index.html`](results/index.html).
+Out of the 787 repos we crawled, 158 had dependencies that GitHub could parse. The full results are presented in [`results/index.html`](results/index.html).
 
 The top five dependencies are:
 
-- /numpy/numpy (97)
-- /matplotlib/matplotlib (72)
-- /scipy/scipy (70)
-- /pandas-dev/pandas (43)
-- /pytest-dev/pytest (36)
+- /numpy/numpy (102)
+- /matplotlib/matplotlib (76)
+- /scipy/scipy (74)
+- /pandas-dev/pandas (44)
+- /pytest-dev/pytest (39)
 
 Some of these dependencies have overlap, e.g. `scipy` and `pandas` both also have `numpy` as a dependency.
 
